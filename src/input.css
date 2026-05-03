@@ -80,16 +80,18 @@
   }
 }
 
-@utility animation-delay-* {
-  animation-delay: --value(--animation-delay-*);
-  animation-delay: --value([*]);
-}
-
 @layer components {
   .menu-item {
     @apply relative flex h-full cursor-pointer items-center p-4 font-bold text-pink-200 capitalize transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200;
   }
 }
+
+
+@utility animation-delay-* {
+  animation-delay: --value(--animation-delay-*);
+  animation-delay: --value([*]);
+}
+
 
 @custom-variant group-open {
   &:is(:where(.group):is(.open, [open], :popover-open, :open) *) {
@@ -101,4 +103,24 @@
   &:is(:where(.peer):is(.open, [open], :popover-open, :open) ~ *) {
     @slot;
   }
+}
+
+
+.container {
+    width: 100%;
+    @media (width >= 40rem /* 640px */) {
+        max-width: 40rem /* 640px */;
+    }
+    @media (width >= 48rem /* 768px */) {
+        max-width: 48rem /* 768px */;
+    }
+    @media (width >= 64rem /* 1024px */) {
+        max-width: 64rem /* 1024px */;
+    }
+    @media (width >= 80rem /* 1280px */) {
+        max-width: 80rem /* 1280px */;
+    }
+    @media (width >= 96rem /* 1536px */) {
+        max-width: 96rem /* 1536px */;
+    }
 }
