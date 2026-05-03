@@ -17,6 +17,15 @@
             mobileMenuIcon.classList.add("open");
           }
         });
+
+        const ticketsMenuItem = document.getElementById("ticket-menu-item");
+        ticketsMenuItem.addEventListener("click", () => {
+          if (ticketsMenuItem.classList.contains("open")) {
+            ticketsMenuItem.classList.remove("open");
+          } else {
+            ticketsMenuItem.classList.add("open");
+          }
+        });
       };
     </script>
   </head>
@@ -24,31 +33,70 @@
     <main>
       <header class="text-zinc-200">
         <nav
-          class="sticky flex items-center top-0 bg-linear-to-r from-rose-500 to-pink-500"
+          class="sticky top-0 flex items-center bg-linear-to-r from-rose-500 to-pink-500"
         >
-          <div class="flex items-center p-2 gap-2">
+          <div class="flex items-center gap-2 p-2">
             <img src="./assets/images/logo-inverted.png" width="50" alt="" />
           </div>
-          <div class="font-bold text-2xl font-quicksand">Radio Javan</div>
+          <div class="font-quicksand text-2xl font-bold">Radio Javan</div>
 
+          <!-- mobile-nav -->
           <div
             id="mobile-nav"
-            class="block md:hidden ml-auto my-auto\ pr-4 cursor-pointer"
+            class="my-auto\ ml-auto block cursor-pointer pr-4 md:hidden"
           >
-            <button id="mobile-menu-button" class="group cursor-pointer">
+            <div id="mobile-menu-button" class="group peer cursor-pointer">
               <div
-                class="top-0 transition-all bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative"
+                class="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"
               ></div>
               <div
-                class="transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0"
+                class="mt-1 h-1 w-8 rounded-full bg-zinc-200 opacity-100 transition-all group-open:opacity-0"
               ></div>
               <div
-                class="top-0 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-rotate-45 group-open:-top-2 relative"
+                class="relative top-0 mt-1 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"
               ></div>
-            </button>
+            </div>
+            <div
+              class="ba-gradient-to-r to absolute top-15.75 left-0 hidden w-full bg-pink-500 from-rose-500 peer-open:block"
+            >
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>home</span>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>lineup</span>
+              </div>
+              <div
+                id="ticket-menu-item"
+                class="group relative h-full cursor-pointer text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <div class="p-4 text-center font-bold">ticketss</div>
+                <div class="hidden group-open:block">
+                  <div
+                    class="relative p-4 text-center text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <div><span>single day ticket</span></div>
+                  </div>
+                  <div
+                    class="relative p-4 text-center text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <div><span>7 day ticket</span></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>support</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hidden flex-1 md:flex items-center justify-end">
+          <!-- desktop-nav -->
+          <div class="hidden flex-1 items-center justify-end md:flex">
             <div class="menu-item">
               <span>home</span>
             </div>
@@ -58,15 +106,15 @@
             <div class="menu-item group">
               <span>tickets</span>
               <div
-                class="group-hover:block hidden bg-pink-500 absolute top-full right-0 whitespace-nowrap rounded-b-md text-right"
+                class="absolute top-full right-0 hidden rounded-b-md bg-pink-500 text-right whitespace-nowrap group-hover:block"
               >
                 <div
-                  class="p-4 font-bold hover:bg-white/5 hover:text-zinc-100 transition-colors ease-in-out cursor-pointer text-pink-200"
+                  class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-100"
                 >
                   <span>single day ticket</span>
                 </div>
                 <div
-                  class="p-4 font-bold hover:bg-white/5 hover:text-zinc-100 transition-colors ease-in-out text-pink-200"
+                  class="p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-100"
                 >
                   <span>7 day ticket</span>
                 </div>
