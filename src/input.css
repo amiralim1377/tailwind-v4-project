@@ -121,6 +121,6 @@
         max-width: 80rem /* 1280px */;
     }
     @media (width >= 96rem /* 1536px */) {
-        max-width: 96rem /* 1536px */;
+        max-width: 86rem /* 1536px */;
     }
 }
