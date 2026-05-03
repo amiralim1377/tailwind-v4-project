@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./assets/font/quicksand-light.woff") format("woff2");
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./assets/font/quicksand-bold.woff") format("woff2");
+}
+
+@theme {
+  --font-quicksand: "Quicksand", sans-serif;
+}
